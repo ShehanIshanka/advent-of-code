@@ -23,7 +23,6 @@ def get_calibration(string: str) -> int:
         "nine": "9",
     }
     pattern = rf'(?=({"|".join(words_to_digits.keys())}|\d))'
-    # pattern = r"|".join(re.escape(word) for word in words_to_digits.keys()) + "|\d"
     digits = re.findall(pattern, string, flags=re.IGNORECASE)
     return int(
         words_to_digits.get(digits[0], digits[0])
